@@ -466,36 +466,3 @@ Tab:AddToggle({
 
 
 
-
-
-
-
-local Tab = Window:MakeTab({
-	Name = "Femboy Friday",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-
-
-Tab:AddToggle({
-	Name = "Stop Loop Healing (Check Then Uncheck)",
-	Default = false,
-	Callback = function(v)
-        if v == true then
-        getgenv().SLAM = true
-
-local RunService = game:GetService("RunService")
-while RunService.RenderStepped:Wait() and getgenv().SLAM == true do
-
-game:GetService("ReplicatedStorage").Slam:FireServer()   
-
-		if v == false then        
-        getgenv().SLAM = false 
-	end    
-    end
-    end
-    end
-
-})
-
