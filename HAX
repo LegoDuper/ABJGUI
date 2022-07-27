@@ -1,0 +1,501 @@
+for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerScripts.Seas:GetChildren()) do
+	if v then
+    	v:Destroy()
+    end
+end
+
+
+
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "ABJ~Hax", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+    local Players = game:GetService("Players").LocalPlayer
+    OrionLib:MakeNotification({
+        Name = "ABJ~Hax GUI",
+        Content = "Welcome "..Players.Name.."!",
+        Image = "",
+        Time = 5
+    })
+    
+    local Tab = Window:MakeTab({
+        Name = "Info",
+        Icon = "rbxassetid://",
+        PremiumOnly = false
+    })
+    
+    Tab:AddParagraph("Username :",Players.Name)
+    
+    Tab:AddParagraph("Current Executor : ",identifyexecutor())
+    
+    local Section = Tab:AddSection({
+        Name = "Script Information"
+    })
+    
+     Tab:AddParagraph("Scripter :", "Z7Z7#1397")
+    
+     Tab:AddParagraph("Ui Library :", "Orion Library")
+
+     Tab:AddParagraph("Thank You lobox :", "lobox920#9889")
+
+local Tab = Window:MakeTab({
+	Name = "Combat",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+local Section = Tab:AddSection({
+	Name = "Combat (AURA)"
+})
+
+
+Tab:AddButton({
+	Name = "Kill All!",
+	Callback = function()
+
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+if v ~= game.Players.LocalPlayer then
+local args = {
+    [1] = v.Character.Humanoid,
+    [2] = CFrame.new(nil, nil, nil) * CFrame.Angles(1.5662832260131836, 0.14169052243232727, -1.5271109342575073),
+    [3] = 1600,
+    [4] = 0.25,
+    [5] = Vector3.new(-9.701568603515625, -0.0018600921612232924, -2.424781084060669),
+    [6] = "rbxassetid://241837157",
+    [7] = 0.075,
+    [8] = nil --[[Color3]],
+    [9] = "rbxassetid://260430079",
+    [10] = 1.1,
+    [11] = 2
+}
+
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
+
+        end
+    end
+end
+
+
+})
+
+
+Tab:AddButton({
+	Name = "Fling All!",
+	Callback = function()
+
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+if v ~= game.Players.LocalPlayer then
+local args = {
+    [1] = v.Character.Humanoid,
+    [2] = CFrame.new(nil, nil, nil) * CFrame.Angles(1.5662832260131836, 0.14169052243232727, -1.5271109342575073),
+    [3] = 1,
+    [4] = 5,
+    [5] = Vector3.new(math.huge, math.huge, math.huge),
+    [6] = "rbxassetid://241837157",
+    [7] = 0.075,
+    [8] = nil --[[Color3]],
+    [9] = "rbxassetid://260430079",
+    [10] = 1.1,
+    [11] = 2
+}
+
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
+
+        end
+    end
+end
+})
+
+
+Tab:AddButton({
+	Name = "Knock All!",
+	Callback = function()
+
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+if v ~= game.Players.LocalPlayer then
+local args = {
+    [1] = v.Character.Humanoid,
+}
+
+game:GetService("ReplicatedStorage").Knock:FireServer(unpack(args))
+
+end
+end
+end
+
+})
+
+Tab:AddButton({
+	Name = "Freeze All!",
+	Callback = function()
+
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+if v ~= game.Players.LocalPlayer then
+local args = {
+    [1] = v.Character.Humanoid,
+    [2] = CFrame.new(nil, nil, nil) * CFrame.Angles(1.5662832260131836, 0.14169052243232727, -1.5271109342575073),
+    [3] = 1,
+    [4] = 59,
+    [5] = Vector3.new(nil, nil, nil),
+    [6] = "rbxassetid://241837157",
+    [7] = 0.075,
+    [8] = nil --[[Color3]],
+    [9] = "rbxassetid://260430079",
+    [10] = 1.1,
+    [11] = 2
+}
+
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
+
+        end
+    end
+end
+
+})
+
+
+
+
+Tab:AddBind({
+	Name = "Spam Heal All!",
+	Default = Enum.KeyCode.K,
+	Hold = false,
+	Callback = function()
+
+getgenv().godbind = true
+while getgenv().godbind == true do
+
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+if v ~= game.Players.LocalPlayer then
+local args = {
+    [1] = v.Character.Humanoid,
+    [2] = CFrame.new(nil, nil, nil) * CFrame.Angles(1.584680199623108, 0.1044115424156189, 2.2684919834136963),
+    [3] = 199,
+    [4] = 0,
+    [6] = "rbxassetid://245751634",
+    [7] = 0.075,
+    [8] = nil --[[Color3]],
+    [9] = "rbxassetid://2914074987",
+    [10] = 1.8,
+    [11] = 1
+}
+
+game:GetService("ReplicatedStorage").Heal5:FireServer(unpack(args))
+wait()
+            end
+        end    
+    end
+end
+})
+
+
+Tab:AddBind({
+	Name = "Turn Off Spam Heal!",
+	Default = Enum.KeyCode.L,
+	Hold = false,
+	Callback = function()
+getgenv().godbind = false
+end
+})
+
+
+
+
+local Tab = Window:MakeTab({
+	Name = "LocalPlayer",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "God (We Skids Cum On 1 Shot Stands!)",
+	Callback = function()
+
+local args = {
+    [1] = "CMOONStand",
+    [2] = 30,
+    [3] = math.huge,
+    [4] = "\226\153\141\226\153\147\226\153\142\226\153\142\226\153\137\226\153\136\226\153\144\226\153\143\226\153\139\226\153\137"
+}
+
+game:GetService("ReplicatedStorage").Stand:FireServer(unpack(args))
+
+
+end
+})
+
+Tab:AddButton({
+	Name = "Deflect On (1 Shot Stands Can SM BBC!)",
+	Callback = function()
+local args = {
+    [1] = true
+}
+
+game:GetService("ReplicatedStorage").Deflect:FireServer(unpack(args))
+end
+
+})
+
+Tab:AddButton({
+	Name = "Deflect Off",
+	Callback = function()
+local args = {
+    [1] = false
+}
+
+game:GetService("ReplicatedStorage").Deflect:FireServer(unpack(args))
+end
+
+})
+
+Tab:AddSlider({
+	Name = "Walk Speed",
+	Min = 16,
+	Max = 250,
+	Default = 16,
+	Color = Color3.fromRGB(255, 0, 0),
+	Increment = 1,
+	ValueName = "Speed",
+	Callback = function(v)
+		game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = v
+	end    
+})
+
+
+Tab:AddSlider({
+	Name = "Jump Power",
+	Min = 50,
+	Max = 250,
+	Default = 50,
+	Color = Color3.fromRGB(255, 0, 0),
+	Increment = 1,
+	ValueName = "Jump!",
+	Callback = function(v)
+		game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = v
+	end    
+})
+
+
+local Tab = Window:MakeTab({
+	Name = "Specific User",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+    local Dropdown = Tab:AddDropdown({
+        Name = "Kill A Player",
+        Default = "",
+        Options = playerlist,
+        Callback = function(Value)
+local args = {
+    [1] = game:GetService("Players")[Value].Character.Humanoid,
+    [2] = CFrame.new(nil, nil, nil) * CFrame.Angles(1.5662832260131836, 0.14169052243232727, -1.5271109342575073),
+    [3] = 1600,
+    [4] = 0.25,
+    [5] = Vector3.new(nil, nil, nil),
+    [6] = "rbxassetid://241837157",
+    [7] = 0.075,
+    [8] = nil --[[Color3]],
+    [9] = "rbxassetid://260430079",
+    [10] = 1.1,
+    [11] = 2
+}
+
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
+
+            OrionLib:MakeNotification({
+                Name = "According To LegoDuper's Analysis :",
+                Content = "Killed "..Value.."",
+                Image = "rbxassetid://",
+                Time = 5
+            })
+        end  
+    })
+    task.spawn(function()
+        while wait(1) do
+            local players = game.Players:GetChildren()
+            local PlayerList = {}
+        
+            for i,v in pairs(players) do
+                table.insert(PlayerList,v.Name)
+            end
+            Dropdown:Refresh(PlayerList, true)
+        end
+    end)
+
+
+    local Dropdown = Tab:AddDropdown({
+        Name = "Fling A Player",
+        Default = "",
+        Options = playerlist,
+        Callback = function(Value)
+local args = {
+    [1] = game:GetService("Players")[Value].Character.Humanoid,
+    [2] = CFrame.new(nil, nil, nil) * CFrame.Angles(1.5662832260131836, 0.14169052243232727, -1.5271109342575073),
+    [3] = 1,
+    [4] = 0.25,
+    [5] = Vector3.new(math.huge, math.huge, math.huge),
+    [6] = "rbxassetid://241837157",
+    [7] = 0.075,
+    [8] = nil --[[Color3]],
+    [9] = "rbxassetid://260430079",
+    [10] = 1.1,
+    [11] = 2
+}
+
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
+
+            OrionLib:MakeNotification({
+                Name = "According To LegoDuper's Analysis :",
+                Content = "Flinged "..Value.."",
+                Image = "rbxassetid://",
+                Time = 5
+            })
+        end    
+    })
+    task.spawn(function()
+        while wait(1) do
+            local players = game.Players:GetChildren()
+            local PlayerList = {}
+        
+            for i,v in pairs(players) do
+                table.insert(PlayerList,v.Name)
+            end
+            Dropdown:Refresh(PlayerList, true)
+        end
+    end)
+
+    local Dropdown = Tab:AddDropdown({
+        Name = "Freeze A Player",
+        Default = "",
+        Options = playerlist,
+        Callback = function(Value)
+local args = {
+    [1] = game:GetService("Players")[Value].Character.Humanoid,
+    [2] = CFrame.new(nil, nil, nil) * CFrame.Angles(1.5662832260131836, 0.14169052243232727, -1.5271109342575073),
+    [3] = 1,
+    [4] = 59,
+    [5] = Vector3.new(nil, nil, nil),
+    [6] = "rbxassetid://241837157",
+    [7] = 0.075,
+    [8] = nil --[[Color3]],
+    [9] = "rbxassetid://260430079",
+    [10] = 1.1,
+    [11] = 2
+}
+
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
+
+            OrionLib:MakeNotification({
+                Name = "According To LegoDuper's Analysis :",
+                Content = "Froze "..Value.."",
+                Image = "rbxassetid://",
+                Time = 5
+            })
+        end    
+    })
+    task.spawn(function()
+        while wait(1) do
+            local players = game.Players:GetChildren()
+            local PlayerList = {}
+        
+            for i,v in pairs(players) do
+                table.insert(PlayerList,v.Name)
+            end
+            Dropdown:Refresh(PlayerList, true)
+        end
+    end)
+
+
+
+    
+    local Dropdown = Tab:AddDropdown({
+        Name = "Loop Heal A Player",
+        Default = "",
+        Options = playerlist,
+        Callback = function(Godder)
+
+getgenv().autogodding = true 
+while autogodding do
+
+local args = {
+    [1] = game:GetService("Players")[Godder].Character.Humanoid,
+    [2] = CFrame.new(nil, nil, nil) * CFrame.Angles(1.584680199623108, 0.1044115424156189, 2.2684919834136963),
+    [3] = 199,
+    [4] = 0,
+    [6] = "rbxassetid://245751634",
+    [7] = 0.075,
+    [8] = nil --[[Color3]],
+    [9] = "rbxassetid://2914074987",
+    [10] = 1.8,
+    [11] = 1
+}
+
+game:GetService("ReplicatedStorage").Heal5:FireServer(unpack(args))
+
+wait()
+
+end   
+end
+
+    })
+    task.spawn(function()
+        while wait(1) do
+            local players = game.Players:GetChildren()
+            local PlayerList = {}
+        
+            for i,v in pairs(players) do
+                table.insert(PlayerList,v.Name)
+            end
+            Dropdown:Refresh(PlayerList, true)
+        end
+    end)
+
+Tab:AddToggle({
+	Name = "Stop Loop Healing (Check Then Uncheck)",
+	Default = false,
+	Callback = function(v)
+		if v == false then        
+        getgenv().autogodding = false 
+	end    
+    end
+})
+
+
+
+
+
+
+
+
+local Tab = Window:MakeTab({
+	Name = "Femboy Friday",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+
+Tab:AddToggle({
+	Name = "Stop Loop Healing (Check Then Uncheck)",
+	Default = false,
+	Callback = function(v)
+        if v == true then
+        getgenv().SLAM = true
+
+local RunService = game:GetService("RunService")
+while RunService.RenderStepped:Wait() and getgenv().SLAM == true do
+
+game:GetService("ReplicatedStorage").Slam:FireServer()   
+
+		if v == false then        
+        getgenv().SLAM = false 
+	end    
+    end
+    end
+    end
+
+})
+
